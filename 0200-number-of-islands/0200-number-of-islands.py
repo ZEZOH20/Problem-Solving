@@ -17,21 +17,21 @@ class Solution:
                     visited[i][j] = True
                     islandCount += 1
             
-                while queue:
-                    x, y = queue.pop(0)
-                
-                # Check neighbors (up, down, left, right)
-                    for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-                        newX, newY = x + dx, y + dy
+                    while queue:
+                        x, y = queue.pop(0)
                     
-                        if (0 <= newX < len(grid) and 
-                            0 <= newY < len(grid[0]) and 
-                            grid[newX][newY] == '1' and 
-                            not visited[newX][newY]):
+                    # Check neighbors (up, down, left, right)
+                        for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                            newX, newY = x + dx, y + dy
                         
-                            queue.append((newX, newY))
-                            visited[newX][newY] = True
-                        
+                            if (0 <= newX < len(grid) and 
+                                0 <= newY < len(grid[0]) and 
+                                grid[newX][newY] == '1' and 
+                                not visited[newX][newY]):
+                            
+                                queue.append((newX, newY))
+                                visited[newX][newY] = True
+                            
         
         return islandCount
 
